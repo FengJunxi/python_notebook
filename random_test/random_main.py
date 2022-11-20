@@ -17,7 +17,7 @@ def poisson_test():
 # 参考google 论文 https://github.com/timothybrooks/unprocessing/blob/master/unprocess.py
 
 # def random_noise_levels():
-#   """Generates random noise levels from a log-log linear distribution."""
+#   """Generates random_test noise levels from a log-log linear distribution."""
 #   log_min_shot_noise = tf.log(0.0001)
 #   log_max_shot_noise = tf.log(0.012)
 #   log_shot_noise = tf.random_uniform((), log_min_shot_noise, log_max_shot_noise)
@@ -30,7 +30,7 @@ def poisson_test():
 #
 #
 # def add_noise(image, shot_noise=0.01, read_noise=0.0005):
-#   """Adds random shot (proportional to image) and read (independent) noise."""
+#   """Adds random_test shot (proportional to image) and read (independent) noise."""
 #   variance = image * shot_noise + read_noise
 #   noise = tf.random_normal(tf.shape(image), stddev=tf.sqrt(variance))
 #   return image + noise
@@ -161,7 +161,7 @@ def add_poisson_noise_test():
     # TODO： 注意标准差要开方
     cv2.imwrite("img_gray_possion_noisy.png", noisy_img)
 
-    # s = np.random.poisson(20, 1000000)
+    # s = np.random_test.poisson(20, 1000000)
     s = noisy_img.reshape(128 * 128)
     count, bins, ignored = plt.hist(s, 15, density=True)
     plt.title("poisson noise distribution")
@@ -179,7 +179,7 @@ def add_gaussian_noise_test():
     noisy_img = add_gaussian_noise(img, sigma)
     cv2.imwrite("img_gray_gaussian_noisy.png", noisy_img)
 
-    # s = np.random.poisson(20, 1000000)
+    # s = np.random_test.poisson(20, 1000000)
     s = noisy_img.reshape(128 * 128)
     count, bins, ignored = plt.hist(s, 15, density=True)
     plt.title("gaussian noise distribution")
